@@ -1,0 +1,45 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slider-image"><img src="../animation psd/image/IMG-20230824-WA0005.jpg" alt=""></div>
+        <div class="slider-image"><img src="../animation psd/image/IMG-20230824-WA0006.jpg" alt=""></div>
+        <div class="slider-image"><img src="../animation psd/image/IMG-20230824-WA0005.jpg" alt=""></div>
+        <div class="slider-image"><img src="../animation psd/image/IMG-20230824-WA0006.jpg" alt=""></div>
+        <div class="slider-image"><img src="../animation psd/image/IMG-20230824-WA0005.jpg" alt=""></div>
+    </div>
+
+    <script>
+        var sliderdata = document.getElementsByClassName("slider-image");
+        counter = 0
+        function slider() {
+            for (let index = 0; index < sliderdata.length; index++) {
+                console.log(sliderdata[index]);
+                sliderdata[index].style.display = "none"
+            }
+            if (counter >= sliderdata.length)
+                counter = 0
+            console.log(counter);
+            sliderdata[counter].style.display = "block"
+            counter++;
+
+            setTimeout(slider, 3000);
+        }
+   
+        slider()
+    </script>
+</body>
+
+</html>
