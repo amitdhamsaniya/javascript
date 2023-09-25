@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgba(129, 203, 203, 0.421);
+
+    }
+
+    form {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    #btn {
+        background-color: rgb(166, 206, 208);
+        padding: 7px 40px;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="login-page">
+        <form action="">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name:</label>
+                        <input type="text" placeholder="enter your name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Username">Username:</label>
+                        <input type="text" placeholder="enter your Username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Password">Password:</label>
+                        <input type="password" placeholder="enter your password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Password">Confirm password:</label>
+                        <input type="password" placeholder="enter your password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <input type="button" value="submit" id="btn">
+                       <!-- <button id="btn" value="submit">submit</button> -->
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", myfunction)
+   function myfunction() {
+    alert("registration successful")
+    window.location.href="file:///c%3A/amit/psd/psd%20practice/js.practics/reg.html"
+    
+   }
+
+    </script>
+</body>
+
+</html>
