@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter&family=Heebo&family=Kanit:wght@300&family=Karla:wght@200&family=Lato&family=Montserrat:wght@100;300;400&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300&family=Permanent+Marker&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+
+        body {
+            background: #444;
+        }
+
+        #toggle {
+            width: 28px;
+            height: 30px;
+            margin: 10px auto;
+        }
+
+        #toggle div {
+            width: 100%;
+            height: 5px;
+            background: white;
+            margin: 4px auto;
+            transition: all 0.3s;
+            backface-visibility: hidden;
+        }
+
+        #toggle.on .one {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        #toggle.on .two {
+            opacity: 0;
+        }
+
+        #toggle.on .three {
+            transform: rotate(-45deg) translate(7px, -8px);
+        }
+
+        #menu {
+            color: white;
+            border: 1px solid white;
+            width: 250px;
+            height: 330px;
+            padding: 10px;
+            border-radius: 15px;
+            font-family: 'Nunito Sans', sans-serif;
+            line-height: 50px;
+            text-align: center;
+            margin: auto;
+            display: none;
+        }
+
+        #menu ul li {
+            list-style: none;
+            text-align: center;
+        }
+
+        #menu ul li a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div id="toggle">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Find a Car</a></li>
+            <li><a href="#">Click to Buy</a></li>
+            <li><a href="#">Connect to Service</a></li>
+            <li><a href="#">Hyundai Story</a></li>
+            <li><a href="#">mobility Solution</a></li>
+            <li><a href="#">Contact Us</a></li>
+
+        </ul>
+    </div>
+
+    <script>
+        $("#toggle").click(function () {
+            $(this).toggleClass("on");
+            $("#menu").slideToggle();
+        });
+    </script>
+</body>
+
+</html>
