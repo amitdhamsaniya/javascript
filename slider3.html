@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-container {
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s;
+}
+
+.slide {
+  width: 300px;
+  flex-shrink: 0;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+          <div class="slide">Slide 1</div>
+          <div class="slide">Slide 2</div>
+          <div class="slide">Slide 3</div>
+        </div>
+      </div>
+      <script>
+        const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+function updateSlider() {
+  const offset = -currentIndex * 300;
+  slider.style.transform = `translateX(${offset}px)`;
+}
+
+function nextSlide() {
+  if (currentIndex < slides.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  updateSlider();
+}
+
+
+let autoplayInterval;
+
+function startAutoplay() {
+  autoplayInterval = setInterval(nextSlide, 2000); 
+}
+
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+}
+
+slider.addEventListener('click', () => {
+  nextSlide();
+  stopAutoplay();
+});
+
+updateSlider();
+startAutoplay();
+      </script>
+</body>
+</html>
