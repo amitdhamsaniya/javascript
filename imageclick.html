@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        #div img {
+            width: 100%;
+            border: 5px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fetch Data</h1>
+    <button id="btnClick"> Fetch Now!</button>
+    <div id="div"></div>
+
+    <script>
+        let btn = document.getElementById('btnClick')
+        let div = document.getElementById('div')
+        btn.addEventListener('click', function () {
+            fetch("https://fakestoreapi.com/products/category/jewelery")
+                .then(res => res.json())
+                .then(result => {
+                    let data = result;
+                    for (let index = 0; index < data.length; index++) {
+                        const aaa = data[index]["image"];
+                        console.log(aaa);
+                        let img = document.createElement('img');
+                        div.append(img)
+                        img.setAttribute('src', aaa)
+                    }
+                })
+                .catch(err => console.log(err))
+        })
+    </script>
+</body>
+
+</html>
